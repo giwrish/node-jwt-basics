@@ -6,8 +6,4 @@ class APIError extends Error {
   }
 }
 
-const createError = (message, statusCode) => {
-  return new APIError(message, statusCode);
-};
-
-module.exports = { createError, APIError };
+module.exports = APIError;
