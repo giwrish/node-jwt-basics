@@ -5,14 +5,14 @@ const express = require("express");
 const app = express();
 const notFoundMiddleware = require("./middleware/notFoundHandler");
 const errorHandlerMiddleware = require("./middleware/errorHandler");
-const jwtRouter = require("./routes/jwtRouter");
+const uiRouter = require("./routes/uiRouter");
 
 //middlewares
-app.use(express.static("/public"));
+app.use(express.static("./public"));
 app.use(express.json());
 
 //routes
-app.use("/api/v1", jwtRouter);
+app.use("/api/v1", uiRouter);
 
 //error handlers
 app.use(notFoundMiddleware);
